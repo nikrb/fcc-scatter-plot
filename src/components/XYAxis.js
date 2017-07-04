@@ -5,7 +5,8 @@ export default (props) => {
   const xSettings = {
     translate: 'translate(0,' + (props.height - props.padding) + ')',
     scale: props.xScale,
-    orient: 'bottom'
+    orient: 'bottom',
+    formatter: props.formatter
   };
   const ySettings = {
     translate: 'translate(' + props.padding + ', 0)',
