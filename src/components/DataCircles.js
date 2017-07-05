@@ -1,12 +1,15 @@
 import React from 'react';
 
 const renderCircles = (props) => {
-  return (coords, index) => {
+  return (data, index) => {
+    const {coords} = data;
     const circleProps = {
       cx: props.xScale(coords[0]),
       cy: props.yScale(coords[1]),
       r: 2,
       key: index
+      // onMouseEnter: props.handleMouseEnter.call( this, data),
+      // onMouseLeave: props.handleMouseLeave
     };
     return <circle {...circleProps} />;
   };

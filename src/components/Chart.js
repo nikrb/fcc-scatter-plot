@@ -16,7 +16,7 @@ export default (props) => {
   props = {
     ...props,
     xaxis_format: formatMinutes
-  }
+  };
   return (
     <div>
       <h1>React d3 Chart</h1>

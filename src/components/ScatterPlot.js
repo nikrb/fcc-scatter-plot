@@ -3,16 +3,16 @@ import * as d3    from 'd3';
 import DataCircles  from './DataCircles';
 import XYAxis       from './XYAxis';
 
-const xMax   = (data)  => d3.max(data, (d) => d[0]);
-const yMax   = (data)  => d3.max(data, (d) => d[1]);
+const xMax   = (data)  => d3.max(data, (d) => d.coords[0]);
+const yMax   = (data)  => d3.max(data, (d) => d.coords[1]);
 const xScale = (props) => {
   return d3.scaleLinear()
-    .domain([0, xMax(props.data)])
+    .domain([xMax(props.data), 0])
     .range([props.padding, props.width - props.padding * 2]);
 };
 const yScale = (props) => {
   return d3.scaleLinear()
-    .domain([0, yMax(props.data)])
+    .domain([yMax(props.data),0])
     .range([props.height - props.padding, props.padding]);
 };
 const marshalProps = (props) => {
