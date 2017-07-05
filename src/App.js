@@ -45,10 +45,16 @@ class App extends Component {
     const tooltip = {display: (this.state.tooltip_visible)?"block":"none",
       top: "100px", left:"25vw"
     };
+    const axis_labels = {
+      xaxis:"Minutes Behind Fastest Time",
+      xaxis_style: "translate( 200px, 30px)",
+      yaxis:"Ranking",
+      yaxis_style: "translate( 10px, 100px) rotate( -90deg)"
+    };
     return (
       <div className="App">
         { data.length?
-          <Chart data={data}
+          <Chart data={data} axis_labels={axis_labels}
             handleMouseEnter={this.handleMouseEnter} handleMouseLeave={this.handleMouseLeave}/>
           :<div></div>
         }

@@ -1,5 +1,5 @@
 import React from 'react';
-import * as d3    from 'd3';
+import * as d3 from 'd3';
 
 export default class Axis extends React.Component {
   componentDidUpdate = ()=>{
@@ -25,8 +25,15 @@ export default class Axis extends React.Component {
     d3.select(node).call(axis);
   };
   render=()=> {
+    const {axis_label,axis_style} = this.props;
+    const style = {
+      transform: axis_style,
+      fill:"black"
+    };
     return (
-      <g className="axis" ref="axis" transform={this.props.translate}></g>
+      <g className="axis" ref="axis" transform={this.props.translate}>
+        <text style={style}>{axis_label}</text>
+      </g>
     );
   }
 };
