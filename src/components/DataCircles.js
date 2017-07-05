@@ -6,10 +6,10 @@ const renderCircles = (props) => {
     const circleProps = {
       cx: props.xScale(coords[0]),
       cy: props.yScale(coords[1]),
-      r: 2,
-      key: index
-      // onMouseEnter: props.handleMouseEnter.call( this, data),
-      // onMouseLeave: props.handleMouseLeave
+      r: 3,
+      key: index,
+      onMouseEnter: props.handleMouseEnter.bind( this, data),
+      onMouseLeave: props.handleMouseLeave
     };
     return <circle {...circleProps} />;
   };

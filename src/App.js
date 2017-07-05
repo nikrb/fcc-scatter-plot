@@ -7,8 +7,8 @@ import './App.css';
 class App extends Component {
   state = {
     data: [],
-    // tooltip_text: [],
-    // tooltip_visible: false
+    tooltip_text: [],
+    tooltip_visible: false
   };
   componentWillMount = () => {
     Actions.getData()
@@ -17,7 +17,7 @@ class App extends Component {
     });
   };
   handleMouseEnter = (d) => {
-    console.log( d);
+    console.log( "handleMouseEnter data:", d);
     //  Name, Nationality, Year, Time, Doping
     // this.setState( { tooltip_text: [d.name+":"+d.nationality,
     //     d.year+" "+d.time,
@@ -43,16 +43,15 @@ class App extends Component {
         };
       });
     }
-    // const tooltip = {display: (this.state.tooltip_visible)?"block":"none",
-    //   top: "100px", left:"25vw"
-    // };
+    const tooltip = {display: (this.state.tooltip_visible)?"block":"none",
+      top: "100px", left:"25vw"
+    };
     // <Tooltip tip_text={this.state.tooltip_text} pos={tooltip} />
-    // <Chart data={data}
-    //   handleMouseEnter={this.handleMouseEnter} handleMouseLeave={this.handleMouseLeave}/>
     return (
       <div className="App">
         { data.length?
-          <Chart data={data} />
+          <Chart data={data}
+            handleMouseEnter={this.handleMouseEnter} handleMouseLeave={this.handleMouseLeave}/>
           :<div></div>
         }
       </div>
