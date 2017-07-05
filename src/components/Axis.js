@@ -13,17 +13,14 @@ export default class Axis extends React.Component {
     // d3 version
     // var axis = d3.svg.axis().orient(this.props.orient).ticks(5).scale(this.props.scale);
     let axis;
-    const {xaxis_format, yaxis_format} = this.props;
     if( this.props.orient === "bottom"){
       axis = d3.axisBottom(this.props.scale);
-      if( typeof xaxis_format !== "undefined"){
-        axis.tickFormat( xaxis_format);
-      }
     } else {
       axis = d3.axisLeft(this.props.scale);
-      if( typeof yaxis_format !== "undefined"){
-        axis.tickFormat( yaxis_format);
-      }
+    }
+    const {formatter} = this.props;
+    if( typeof formatter !== "undefined"){
+      axis.tickFormat( formatter);
     }
     d3.select(node).call(axis);
   };

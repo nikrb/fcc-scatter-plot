@@ -6,12 +6,13 @@ export default (props) => {
     translate: 'translate(0,' + (props.height - props.padding) + ')',
     scale: props.xScale,
     orient: 'bottom',
-    formatter: props.formatter
+    formatter: props.xaxis_format
   };
   const ySettings = {
     translate: 'translate(' + props.padding + ', 0)',
     scale: props.yScale,
-    orient: 'left'
+    orient: 'left',
+    formatter: props.yaxis_format
   };
   return (
     <g className="xy-axis">
