@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import Chart from './components/Chart';
 import Actions from './Actions';
-// import Tooltip from './components/Tooltip';
+import Tooltip from './components/Tooltip';
 import './App.css';
 
 class App extends Component {
@@ -17,17 +17,16 @@ class App extends Component {
     });
   };
   handleMouseEnter = (d) => {
-    console.log( "handleMouseEnter data:", d);
     //  Name, Nationality, Year, Time, Doping
-    // this.setState( { tooltip_text: [d.name+":"+d.nationality,
-    //     d.year+" "+d.time,
-    //     d.doping
-    //   ],
-    //   tooltip_visible:true,
-    // });
+    this.setState( { tooltip_text: [d.name+":"+d.nationality,
+        d.year+" "+d.time,
+        d.doping
+      ],
+      tooltip_visible:true,
+    });
   };
   handleMouseLeave = () => {
-    // this.setState( { tooltip_visible: false})
+    this.setState( { tooltip_visible: false})
   };
   defaultData = [];
   render = ()=> {
@@ -46,7 +45,6 @@ class App extends Component {
     const tooltip = {display: (this.state.tooltip_visible)?"block":"none",
       top: "100px", left:"25vw"
     };
-    // <Tooltip tip_text={this.state.tooltip_text} pos={tooltip} />
     return (
       <div className="App">
         { data.length?
@@ -54,6 +52,7 @@ class App extends Component {
             handleMouseEnter={this.handleMouseEnter} handleMouseLeave={this.handleMouseLeave}/>
           :<div></div>
         }
+        <Tooltip tip_text={this.state.tooltip_text} pos={tooltip} />
       </div>
     );
   };
