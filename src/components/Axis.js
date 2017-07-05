@@ -28,6 +28,7 @@ export default class Axis extends React.Component {
     const {axis_label,axis_style} = this.props;
     const style = {
       transform: axis_style,
+      textAnchor: "middle",
       fill:"black"
     };
     return (
