@@ -18,7 +18,10 @@ export default class Axis extends React.Component {
     } else {
       axis = d3.axisLeft(this.props.scale);
     }
-    const {formatter} = this.props;
+    const {formatter, ticks} = this.props;
+    if( typeof ticks !== "undefined"){
+      axis.ticks( ticks);
+    }
     if( typeof formatter !== "undefined"){
       axis.tickFormat( formatter);
     }

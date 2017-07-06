@@ -8,7 +8,8 @@ export default (props) => {
     orient: 'bottom',
     formatter: props.xaxis_format,
     axis_label: props.axis_labels.xaxis,
-    axis_style: props.axis_labels.xaxis_style
+    axis_style: props.axis_labels.xaxis_style,
+    ticks: props.x_ticks
   };
   const ySettings = {
     translate: 'translate(' + props.padding + ', 0)',
@@ -16,7 +17,8 @@ export default (props) => {
     orient: 'left',
     formatter: props.yaxis_format,
     axis_label: props.axis_labels.yaxis,
-    axis_style: props.axis_labels.yaxis_style
+    axis_style: props.axis_labels.yaxis_style,
+    ticks: props.y_ticks
   };
   return (
     <g className="xy-axis">

@@ -15,7 +15,8 @@ export default (props) => {
   };
   props = {
     ...props,
-    xaxis_format: formatMinutes
+    xaxis_format: formatMinutes,
+    x_ticks: 6
   };
   return (
     <div>
