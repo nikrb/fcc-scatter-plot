@@ -8,6 +8,7 @@ const renderCircles = (props) => {
       cy: props.yScale(coords[1]),
       r: 3,
       key: index,
+      fill: data.colour,
       onMouseEnter: props.handleMouseEnter.bind( this, data),
       onMouseLeave: props.handleMouseLeave
     };

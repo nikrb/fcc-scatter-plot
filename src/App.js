@@ -38,7 +38,7 @@ class App extends Component {
                   ranking: dp.Place, name: dp.Name,
                   seconds: dp.Seconds-start_seconds,
                   nationality:dp.Nationality, year: dp.Year, time: dp.Time,
-                  doping: dp.Doping
+                  doping: dp.Doping, colour: dp.Doping?"red":"black"
         };
       });
     }
