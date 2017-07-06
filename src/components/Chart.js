@@ -1,13 +1,14 @@
-import React                from 'react';
-import ScatterPlot          from './ScatterPlot';
-
-const styles = {
-  width   : 600,
-  height  : 500,
-  padding : 30
-};
+import React from 'react';
+import ScatterPlot from './ScatterPlot';
+import Heading from './Heading';
+import Legend from './Legend';
 
 export default (props) => {
+  const styles = {
+    width   : 800,
+    height  : 500,
+    padding : 30
+  };
   const formatMinutes = (d) => {
     const minutes = Math.floor( d/60);
     const seconds = d%60;
@@ -18,9 +19,13 @@ export default (props) => {
     xaxis_format: formatMinutes,
     x_ticks: 6
   };
+  const wrapper = {
+    position: "relative"
+  };
   return (
-    <div>
-      <h1>React d3 Chart</h1>
+    <div style={wrapper}>
+      <Heading />
+      <Legend />
       <ScatterPlot {...props} {...styles} />
     </div>
   );
