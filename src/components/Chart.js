@@ -2,8 +2,8 @@ import React                from 'react';
 import ScatterPlot          from './ScatterPlot';
 
 const styles = {
-  width   : 500,
-  height  : 300,
+  width   : 600,
+  height  : 500,
   padding : 30
 };
 

@@ -1,7 +1,8 @@
-import React        from 'react';
-import * as d3    from 'd3';
-import DataCircles  from './DataCircles';
-import XYAxis       from './XYAxis';
+import React from 'react';
+import * as d3 from 'd3';
+import DataCircles from './DataCircles';
+import DataText from './DataText';
+import XYAxis from './XYAxis';
 
 const xMax   = (data)  => d3.max(data, (d) => d.coords[0]);
 const yMax   = (data)  => d3.max(data, (d) => d.coords[1]);
@@ -25,6 +26,7 @@ export default (props) => {
   return (
     <svg width={d3Props.width} height={d3Props.height}>
       <DataCircles {...d3Props}/>
+      <DataText {...d3Props}/>
       <XYAxis {...d3Props}/>
     </svg>
   );
