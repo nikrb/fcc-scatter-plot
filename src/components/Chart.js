@@ -22,10 +22,15 @@ export default (props) => {
   const wrapper = {
     position: "relative"
   };
+  const legend = {
+    top: "50%",
+    left: "90%",
+    width: "150px"
+  };
   return (
     <div style={wrapper}>
       <Heading />
-      <Legend />
+      <Legend metrix={legend} />
       <ScatterPlot {...props} {...styles} />
     </div>
   );

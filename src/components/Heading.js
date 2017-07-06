@@ -23,7 +23,7 @@ export default () => {
         Doping in Professional Bicycle Racing
       </div>
       <div style={sub_heading}>
-        35 fastest times up Alpe d''Huez
+        35 fastest times up Alpe d'Huez
       </div>
       <div style={sub_heading2}>
         Normalised to 13.8Km distance
