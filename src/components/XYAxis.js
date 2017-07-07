@@ -7,8 +7,8 @@ export default (props) => {
     scale: props.xScale,
     orient: 'bottom',
     formatter: props.xaxis_format,
-    axis_label: props.axis_labels.xaxis,
-    axis_style: props.axis_labels.xaxis_style,
+    axis_label: { text: props.axis_labels.xaxis,
+      x: props.width/2, y:props.padding, anchor: "middle"},
     ticks: props.x_ticks
   };
   const ySettings = {
@@ -16,12 +16,12 @@ export default (props) => {
     scale: props.yScale,
     orient: 'left',
     formatter: props.yaxis_format,
-    axis_label: props.axis_labels.yaxis,
-    axis_style: props.axis_labels.yaxis_style,
+    axis_label: { text: props.axis_labels.yaxis,
+      x: -props.padding/2, y:props.padding, anchor: "end", rotate: "-90deg"},
     ticks: props.y_ticks
   };
   return (
-    <g className="xy-axis">
+    <g>
       <Axis {...xSettings}/>
       <Axis {...ySettings}/>
     </g>

@@ -28,15 +28,19 @@ export default class Axis extends React.Component {
     d3.select(node).call(axis);
   };
   render=()=> {
-    const {axis_label,axis_style} = this.props;
+    const {axis_label} = this.props;
+    let trans = `translate( ${axis_label.x}px, ${axis_label.y}px )`;
+    if( typeof axis_label.rotate !== "undefined"){
+      trans = trans.concat( ` rotate( ${axis_label.rotate})`);
+    }
     const style = {
-      transform: axis_style,
-      textAnchor: "middle",
+      transform: trans,
+      textAnchor: axis_label.anchor,
       fill:"black"
     };
     return (
       <g className="axis" ref="axis" transform={this.props.translate}>
-        <text style={style}>{axis_label}</text>
+        <text style={style}>{axis_label.text}</text>
       </g>
     );
   }

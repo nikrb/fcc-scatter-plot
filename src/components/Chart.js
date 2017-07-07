@@ -7,7 +7,7 @@ export default (props) => {
   const styles = {
     width   : 800,
     height  : 500,
-    padding : 30
+    padding : 40
   };
   const formatMinutes = (d) => {
     const minutes = Math.floor( d/60);
@@ -24,7 +24,7 @@ export default (props) => {
   };
   const legend = {
     top: "50%",
-    left: "90%",
+    left: "80%",
     width: "150px"
   };
   return (

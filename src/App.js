@@ -47,9 +47,7 @@ class App extends Component {
     };
     const axis_labels = {
       xaxis:"Minutes Behind Fastest Time",
-      xaxis_style: "translate( 250px, 30px)",
       yaxis:"Ranking",
-      yaxis_style: "translate( -2.3em, 150px) rotate( -90deg)"
     };
     return (
       <div className="App">
