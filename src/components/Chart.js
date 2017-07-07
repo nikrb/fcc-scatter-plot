@@ -4,17 +4,12 @@ import Heading from './Heading';
 import Legend from './Legend';
 
 export default (props) => {
-  const styles = {
-    width   : 800,
-    height  : 500,
-    padding : 40
-  };
   const formatMinutes = (d) => {
     const minutes = Math.floor( d/60);
     const seconds = d%60;
     return `${minutes>9?minutes:"0"+minutes}:${seconds>9?seconds:"0"+seconds}`;
   };
-  props = {
+  const new_props = {
     ...props,
     xaxis_format: formatMinutes,
     x_ticks: 6
@@ -31,7 +26,7 @@ export default (props) => {
     <div style={wrapper}>
       <Heading />
       <Legend metrix={legend} />
-      <ScatterPlot {...props} {...styles} />
+      <ScatterPlot {...new_props} />
     </div>
   );
 };

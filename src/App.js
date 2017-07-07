@@ -30,6 +30,11 @@ class App extends Component {
   };
   defaultData = [];
   render = ()=> {
+    const styles = {
+      width   : 800,
+      height  : 500,
+      padding : 40
+    };
     let data = this.defaultData;
     if( this.state.data.length){
       const start_seconds = this.state.data[0].Seconds;
@@ -43,7 +48,7 @@ class App extends Component {
       });
     }
     const tooltip = {display: (this.state.tooltip_visible)?"block":"none",
-      top: "100px", left:"25vw"
+      top: `calc( 50% - ${styles.height/2}px + ${styles.padding}px )`, left:`calc( 50% - ${styles.width/2}px + ${styles.padding}px + 5px)`
     };
     const axis_labels = {
       xaxis:"Minutes Behind Fastest Time",
@@ -52,7 +57,7 @@ class App extends Component {
     return (
       <div className="App">
         { data.length?
-          <Chart data={data} axis_labels={axis_labels}
+          <Chart data={data} axis_labels={axis_labels} {...styles}
             handleMouseEnter={this.handleMouseEnter} handleMouseLeave={this.handleMouseLeave}/>
           :<div></div>
         }
